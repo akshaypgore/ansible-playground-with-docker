@@ -2,7 +2,7 @@
 
 set -ex
 
-LIST_OF_APPS="iputils-ping net-tools openssh-server openssh-client vim"
+LIST_OF_APPS="iputils-ping net-tools openssh-server openssh-client vim ansible"
 apt-get update  # To get the latest package lists
 apt-get upgrade -y  # To upgrade all packages to the latest version
 apt-get install -y $LIST_OF_APPS
