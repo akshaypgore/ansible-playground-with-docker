@@ -1,0 +1,6 @@
+[webservers]
+stage-web-1
+stage-web-2
+
+[dbservers]
+stage-db-1

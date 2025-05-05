@@ -1,0 +1,5 @@
+docker network create ansible #create network
+docker run -itd --name ansible-controller --network ansible -v $(pwd):/root/ansible node-controller:latest #create controller node from directory which has ansible root
+docker run -itd --name stage-web-1 --network ansible  node-controller:latest #create staging web server
+docker run -itd --name stage-web-2 --network ansible  node-controller:latest #create staging web server
+docker run -itd --name stage-db-1 --network ansible  node-controller:latest #create staging db server
