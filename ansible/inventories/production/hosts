@@ -1,0 +1,6 @@
+[webservers]
+prod-web-1
+prod-web-2
+
+[dbservers]
+prod-db-1
