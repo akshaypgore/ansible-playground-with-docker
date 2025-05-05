@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -ex
-
+export ANSIBLE_HOST_KEY_CHECKING=False
 LIST_OF_APPS="iputils-ping net-tools openssh-server openssh-client vim"
 apt-get update  # To get the latest package lists
 apt-get upgrade -y  # To upgrade all packages to the latest version
