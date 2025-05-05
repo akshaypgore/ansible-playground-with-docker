@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+ENV ANSIBLE_HOST_KEY_CHECKING=False
 COPY install.sh /tmp/install.sh
 RUN ["/bin/bash", "/tmp/install.sh"]
 RUN ["rm", "-f", "/tmp/install.sh"]
