@@ -1,0 +1,11 @@
+---
+
+- name: Install common packages
+  become: true
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - curl
+    - wget

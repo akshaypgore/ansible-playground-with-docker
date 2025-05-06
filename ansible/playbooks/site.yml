@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+  - {role: common, tags: base}
+
+- ansible.builtin.import_playbook: webservers.yml
+
+- ansible.builtin.import_playbook: dbservers.yml
