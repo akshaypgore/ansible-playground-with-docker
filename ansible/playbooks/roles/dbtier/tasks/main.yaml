@@ -1,0 +1,15 @@
+---
+
+- name: Install redis packages
+  become: true
+  ansible.builtin.apt:
+    name: "redis"
+    state: present
+
+- name: "Configure redis"
+  template: src={{ item.src }} dest={{ item.dest }}
+            owner={{ item.owner }} group={{ item.group }} mode={{ item.mode }}
+  become: true
+  notify: restart-redis
+  with_items:
+  - { src: 'redis/redis.conf', dest: '/etc/redis/redis.conf', owner: 'root', group: 'root', mode: '0600' }

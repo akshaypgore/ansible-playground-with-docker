@@ -3,5 +3,4 @@
 - name: restart-apache2
   ansible.builtin.command: /usr/sbin/apache2ctl start
   become: true
-  
         
