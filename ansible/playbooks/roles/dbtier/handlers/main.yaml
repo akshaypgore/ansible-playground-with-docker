@@ -1,0 +1,7 @@
+---
+
+- name: restart-redis
+  ansible.builtin.shell: "{{ item }}"
+  with_items:
+    - chmod 755 /etc/redis/redis.conf
+    - service redis-server start
