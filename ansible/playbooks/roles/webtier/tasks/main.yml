@@ -6,6 +6,14 @@
     name: "apache2"
     state: present
 
+- name: Display the group variable value
+  ansible.builtin.debug:
+    msg: "The value of group var for web is: {{ my_group_variable }}"
+
+- name: Display the host variable value
+  ansible.builtin.debug:
+    msg: "The value of group var for web is: {{ my_host_variable }}"
+
 - name: "Configure apache2"
   template: src={{ item.src }} dest={{ item.dest }}
             owner={{ item.owner }} group={{ item.group }} mode={{ item.mode }}

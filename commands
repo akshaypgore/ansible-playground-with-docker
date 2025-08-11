@@ -16,3 +16,8 @@ Ansible commands
 ansible-inventory -i inventories/staging/hosts --list # check hosts
 ansible -i inventories/staging/hosts all -m ping #ping all hosts in stage
 ansible -i inventories/staging/hosts webservers -m ping #ping webservers hosts in stage
+ansible -i inventories/staging/hosts webservers -l stage-web-1  -m ping #limit number of servers for ping command
+ansible-playbook -u root -i inventories/staging/hosts -l webservers playbooks/webservers.yml #run playbook and prints group vars
+ansible-playbook -u root -i inventories/staging/hosts -l webservers[0] playbooks/webservers.yml #limit task to single host
+ansible-playbook -u root -i inventories/staging/hosts -l webservers -l stage-web-1 playbooks/webservers.yml #limit task to single host with -l option
+ansible-playbook -u root -i inventories/staging/hosts -l webservers -l stage-web-1 --extra-vars "my_host_variable=yolo"  playbooks/webservers.yml #set variables during play
